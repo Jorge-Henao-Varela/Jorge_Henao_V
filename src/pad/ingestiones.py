@@ -1,10 +1,16 @@
 import json
+from pathlib import Path
+import os
 
 
 
 class Ingestiones():
     def __init__(self):
-        self.ruta_static="D:/SIG 2015/1A.INGENIERIA EN DESARROLLO TERRITORIAL/ANALITICA/repositorios/Jorge_Henao/src/pad/static/"
+        self.ruta_actual = str(Path.cwd())
+        self.ruta_static="{}/src/pad/static/".format(ruta_actual)
+        directorio = os.path.dirname(ruta_static)
+        if not os.path.exists(directorio):
+            os.makedirs(directorio, exist_ok=True)
         
     def leer_json(self):
         # r read w write
