@@ -7,8 +7,8 @@ import os
 class Ingestiones():
     def __init__(self):
         self.ruta_actual = str(Path.cwd())
-        self.ruta_static="{}/src/pad/static/".format(ruta_actual)
-        directorio = os.path.dirname(ruta_static)
+        self.ruta_static="{}/src/pad/static/".format(self.ruta_actual)
+        directorio = os.path.dirname(self.ruta_actual)
         if not os.path.exists(directorio):
             os.makedirs(directorio, exist_ok=True)
         
